@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TRO Engineering Toolkit - Kalkulator teknik untuk mahasiswa otomasi.">
+    <title>TRO Engineering Toolkit</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="navbar">
+        <a href="#" class="brand">
+            <span class="brand-icon">T</span>
+            <span>TRO <strong>ENGINEERING</strong></span>
+        </a>
+        <span class="version">WEB EDITION · 1.0</span>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <p class="eyebrow">ENGINEERING TOOLS FOR AUTOMATION</p>
+            <h1>Calculate with <span>Precision.</span></h1>
+            <p class="hero-description">
+                Toolkit perhitungan teknik untuk mendukung pembelajaran
+                Teknologi Rekayasa Otomasi.
+            </p>
+        </section>
+
+        <section class="toolkit">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">YOUR WORKSPACE</p>
+                    <h2>Engineering Toolkit</h2>
+                </div>
+                <span class="tool-count">05 TOOLS</span>
+            </div>
+
+            <div class="tool-grid">
+                <button class="tool-card" data-tool="ohm">
+                    <span class="tool-number">01</span>
+                    <span class="tool-icon">Ω</span>
+                    <h3>Hukum Ohm</h3>
+                    <p>Hitung tegangan, arus, dan hambatan.</p>
+                    <span class="tool-link">Buka kalkulator ↗</span>
+                </button>
+
+                <button class="tool-card" data-tool="power">
+                    <span class="tool-number">02</span>
+                    <span class="tool-icon">ϟ</span>
+                    <h3>Daya Listrik</h3>
+                    <p>Hitung daya berdasarkan tegangan dan arus.</p>
+                    <span class="tool-link">Buka kalkulator ↗</span>
+                </button>
+
+                <button class="tool-card" data-tool="divider">
+                    <span class="tool-number">03</span>
+                    <span class="tool-icon">÷</span>
+                    <h3>Pembagi Tegangan</h3>
+                    <p>Hitung tegangan keluaran rangkaian.</p>
+                    <span class="tool-link">Buka kalkulator ↗</span>
+                </button>
+
+                <button class="tool-card" data-tool="resistor">
+                    <span class="tool-number">04</span>
+                    <span class="tool-icon">▤</span>
+                    <h3>Kode Resistor</h3>
+                    <p>Identifikasi nilai dari empat pita warna.</p>
+                    <span class="tool-link">Buka kalkulator ↗</span>
+                </button>
+
+                <button class="tool-card" data-tool="series">
+                    <span class="tool-number">05</span>
+                    <span class="tool-icon">∿</span>
+                    <h3>Seri & Paralel</h3>
+                    <p>Hitung hambatan total rangkaian resistor.</p>
+                    <span class="tool-link">Buka kalkulator ↗</span>
+                </button>
+            </div>
+        </section>
+
+        <section class="calculator-panel" id="calculator">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">CALCULATION PANEL</p>
+                    <h2 id="calculator-title">Pilih kalkulator</h2>
+                </div>
+            </div>
+
+            <form id="calculator-form">
+                <div id="calculator-fields">
+                    <p class="empty-state">
+                        Pilih salah satu kalkulator di atas untuk memulai.
+                    </p>
+                </div>
+                <button type="submit" id="calculate-button" hidden>
+                    Hitung hasil ↗
+                </button>
+            </form>
+
+            <div id="result" class="result" aria-live="polite" hidden></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>TRO ENGINEERING TOOLKIT</p>
+        <p>Built for learning. Designed for precision.</p>
+    </footer>
+</body>
+</html>
