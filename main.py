@@ -2,7 +2,9 @@ from calculators import (
     kalkulator_hukum_ohm, 
     kalkulator_daya, 
     kalkulator_pembagi_tegangan,
-    kalkulator_kode_resistor,)
+    kalkulator_kode_resistor,
+    kalkulator_resistor_seri_paralel
+)
 
 def tampilkan_menu():
     print("\n" + "=" * 40)
@@ -13,6 +15,7 @@ def tampilkan_menu():
     print("3. Kalkulator Daya Listrik")
     print("4. Kalkulator Pembagi Tegangan")
     print("5. Kalkulator Kode Warna Resistor")
+    print("6. Kalkulator Resistor Seri-Paralel")
     print("0. Keluar")
     print("=" * 40)
 
@@ -39,6 +42,8 @@ def main():
             kalkulator_pembagi_tegangan()
         elif pilihan == "5":
             kalkulator_kode_resistor()
+        elif pilihan == "6":
+            kalkulator_resistor_seri_paralel()    
         elif pilihan == "0":
             print("Terima kasih telah menggunakan aplikasi!")
             break
