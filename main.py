@@ -1,10 +1,8 @@
-from calculators import (kalkulator_hukum_ohm, 
-                         kalkulator_daya, 
-                         kalkulator_pembagi_tegangan,
-                         kalkulator_kode_resistor,)
-from input_utils import input_angka
-
-import math
+from calculators import (
+    kalkulator_hukum_ohm, 
+    kalkulator_daya, 
+    kalkulator_pembagi_tegangan,
+    kalkulator_kode_resistor,)
 
 def tampilkan_menu():
     print("\n" + "=" * 40)
@@ -17,8 +15,6 @@ def tampilkan_menu():
     print("5. Kalkulator Kode Warna Resistor")
     print("0. Keluar")
     print("=" * 40)
-
-
 
 
 def informasi_aplikasi():
