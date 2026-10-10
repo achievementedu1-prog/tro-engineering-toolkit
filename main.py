@@ -21,6 +21,7 @@ def tampilkan_menu():
     print("1. Kalkulator Hukum Ohm")
     print("2. Informasi Aplikasi")
     print("3. Kalkulator Daya Listrik")
+    print("4. Kalkulator Pembagi Tegangan")
     print("0. Keluar")
     print("=" * 40)
 
@@ -107,11 +108,26 @@ def kalkulator_daya():
             print("Pilihan tidak valid.")
 
 
+def kalkulator_pembagi_tegangan():
+    print("\n--- KALKULATOR PEMBAGI TEGANGAN ---")
+
+    tegangan_masuk = input_angka("Tegangan masukan (V): ")
+    r1 = input_angka("Hambatan R1 (Ohm): ")
+    r2 = input_angka("Hambatan R2 (Ohm): ")
+
+    if r1 + r2 == 0:
+        print("Total hambatan tidak boleh nol.")
+        return
+
+    tegangan_keluar = tegangan_masuk * r2 / (r1 + r2)
+
+    print(f"Tegangan keluaran = {tegangan_keluar:.2f} V")
+
 def informasi_aplikasi():
     print("\nTRO Engineering Toolkit")
     print("Versi: 1.1.0")
     print("Toolkit teknik untuk mahasiswa Teknologi Rekayasa Otomasi.")
-    print("Fitur: Hukum Ohm dan Kalkulator Daya.")
+    print("Fitur: Hukum Ohm, Kalkulator Daya, dan Kalkulator Pembagi Tegangan.")
 
 
 def main():
@@ -125,6 +141,8 @@ def main():
             informasi_aplikasi()
         elif pilihan == "3":
             kalkulator_daya()
+        elif pilihan == "4":
+            kalkulator_pembagi_tegangan()
         elif pilihan == "0":
             print("Terima kasih telah menggunakan aplikasi!")
             break
