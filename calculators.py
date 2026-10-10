@@ -1,5 +1,20 @@
 from input_utils import input_angka
 
+
+def input_jumlah_resistor():
+    while True:
+        try:
+            jumlah = int(input("Masukkan jumlah resistor: "))
+
+            if jumlah < 1:
+                print("Jumlah resistor minimal 1.")
+                continue
+
+            return jumlah
+
+        except ValueError:
+            print("Input tidak valid. Masukkan bilangan bulat.")
+
 def kalkulator_hukum_ohm():
     while True:
         print("\n--- KALKULATOR HUKUM OHM ---")
@@ -158,3 +173,47 @@ def kalkulator_kode_resistor():
 
     print(f"Nilai hambatan = {hambatan:g} Ohm")
     print(f"Toleransi = ±{persen:g}%")                            
+
+
+def kalkulator_resistor_seri_paralel():
+    print("\n=== KALKULATOR RESISTOR SERI-PARALEL ===")
+    print("1. Rangkaian Seri")
+    print("2. Rangkaian Paralel")
+
+    pilihan = input("Pilih jenis rangkaian: ")
+
+    if pilihan == "1":
+        jumlah = input_jumlah_resistor()
+
+        hambatan_total = 0
+
+        for i in range(jumlah):
+            hambatan = input_angka(
+                f"Masukkan hambatan R{i + 1} (ohm): "
+            )
+            hambatan_total += hambatan
+
+        print(f"Hambatan total seri = {hambatan_total:.2f} ohm")
+
+    elif pilihan == "2":
+        jumlah = input_jumlah_resistor()
+
+        jumlah_kebalikan = 0
+
+        for i in range(jumlah):
+            hambatan = input_angka(
+                f"Masukkan hambatan R{i + 1} (ohm): "
+            )
+
+            if hambatan == 0:
+                print("Hambatan resistor harus lebih besar dari 0.")
+                return
+
+            jumlah_kebalikan += 1 / hambatan
+
+        hambatan_total = 1 / jumlah_kebalikan
+
+        print(f"Hambatan total paralel = {hambatan_total:.2f} ohm")
+
+    else:
+        print("Pilihan rangkaian tidak valid.")
